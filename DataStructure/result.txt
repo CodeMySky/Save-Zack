@@ -1,0 +1,8 @@
+{
+    username:String,
+    taskNo:String,
+    status:String,
+    passedStage:Number,
+    energy:Number,
+    code:Array
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta property="wb:webmaster" content="13e091ca67ac5764" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<title>发送邮件</title> 
+	<link rel="shortcut icon" href="" type="image/x-icon"> 
+	<link rel="icon" href="" type="image/x-icon"> 
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<style>
+		label {
+			display: block;
+		}
+	[name='html'] {
+		width: 500px;
+		height: 400px;
+	}
+	</style>
+</head>
+<body>
+<form action="/sendmail" method="post">
+	<label>主题：<input type='text' name='subject'/></label>
+	<label style="">收件人email(测试密码下有效)：<input type='text' name='email'/></label>
+	<!--<label>收件用户的name（数字的那个，测试密码下有效)：<input type='text' name='username'/></label>-->
+	<label>内容：<textarea rows="3" name='html'></textarea></label>
+	<label>密码：<input type='password' name='password'/></label>
+	<input type='submit'>确认发送</input>
+</form>
+<script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+$(function () {
+	var checked;
+	var lower_num;
+	$("#receiver_box").on("click", "input:checkbox", function (e) {
+		if (!e.shiftKey) {
+			checked = this.checked;
+			lower_num = parseInt($(this).parent().find("span.seq").text(), 10)-1;
+		}
+		else {
+			var upper_num = parseInt($(this).parent().find("span.seq").text(), 10)-1;
+			if (upper_num < lower_num) {
+				var temp_num = lower_num;
+				lower_num = upper_num;
+				upper_num = temp_num;
+			}
+			$("#receiver_box input:checkbox:lt("+upper_num+")\
+				:gt("+lower_num+")").each(function () {
+					this.checked = checked;
+				});
+		}
+	});
+});
+*/
+</script>
+</body>
+</html>

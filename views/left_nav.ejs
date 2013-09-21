@@ -1,0 +1,54 @@
+<!--left nav-->
+<div class="nav">
+	<a href="/" class="logo"><span>MC²</span></a>
+	<ul class="navbar">
+		<li>
+			<a href="#" class="profile">
+				<img src="" />
+				<div class="title named"></div>
+				<div class="energy"><span class="score">5</span><sup>e</sup></div>
+				<!-- <div class="progress ">
+             		<div class="bar bar-success" style=""></div>
+            	</div> -->
+			</a>
+		</li>
+		<li class=""><a href="/section?sectionNo=0#" class="tasks"><i class="dotted-tasks"></i><div class="title">任务</div></a></li>
+		<li class="hide"><a href="#" class="map"><i class="dotted-map"></i><div class="title">地图</div></a></li>			
+		<li class="hide"><a href="#" class="challenge"><i class="dotted-challenge"></i><div class="title">挑战</div></a></li>
+		<li class="hide"><a href="#" class="square"><i class="dotted-square"></i><div class="title">广场</div></a></li>
+	</ul>
+	<ul class="otherbar hide">
+		<li><a href="#" class="help" title="帮助"><i class="dotted-help"></i></a></li>
+		<li><a href="#" class="setting" title="设置"><i class="dotted-setting"></i></a></li>
+		<li><a href="/logout" class="logout" title="注销"><i class="dotted-logout"></i></a></li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+mc2.get_user = function () {
+	var user;
+	try {
+		user = JSON.parse($("#user-data").html());
+	} catch (err) {
+		console.log("error in JSON.parse(user)");
+		user = null;
+	}
+	if (user) {
+		if (user.info && user.info[0]) {
+			$(".profile>img").attr("src", user.info[0].profileImageUrl);
+			$(".profile>.title").text(user.info[0].screenName);
+			$(".otherbar").show();
+			$(".profile>div.energy>span.score").text(user.energy);
+		}
+		else {
+			$(".profile>img").attr("src", "/images/logo.png");
+			$(".profile>.title").text(user.name);
+			$(".otherbar").show();
+			$(".profile>div.energy>span.score").text(user.energy);
+		}
+	} else {
+		$(".profile").html('<i class="dotted-profile"></i><div class="title">登陆</div>').attr("href", "#login");
+	}
+	mc2.user = user;
+};
+</script>

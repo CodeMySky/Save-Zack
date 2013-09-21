@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function $(obj){
+			return document.getElementById(obj);
+		}
+		function okBtnClicked(){
+			var n = Number($("number").value);
+			$("content").innerHTML = "版块号:<input type='number' id='no'></br>";
+			for (var i=0;i<n;i++){
+				$("content").innerHTML += i+"号任务<input type='number' id='taskNo"+i+"'></br>";
+			}
+			$("content").innerHTML+="<button onclick='submit()'>提交</button>"
+		}
+		function submit(){
+			var section = new Object;
+			section.no = $("no").value;
+			var n = Number($("number").value);
+			var taskNoArray = new Array;
+			for (var i=0;i<n;i++){
+				taskNoArray.push($("taskNo"+i).value);
+			}
+			section.taskNoArray = taskNoArray;
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.open("POST", "/inputSection", true);
+			xmlHttp.setRequestHeader("Content-Type", "application/json");
+			xmlHttp.onreadystatechange = function () {
+			    if (xmlHttp.readyState === 4) {
+			             return_value = xmlHttp.responseText;
+			    }
+			};
+			alert(JSON.stringify(section));
+			xmlHttp.send(JSON.stringify(section));
+		}
+	</script>
+	请输入任务数:
+	<input type="number" id="number">
+	<button onclick="okBtnClicked()">OK</button>
+	<div id="content"></div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--[if lt IE 9]><script src="/commons/static/js/html5shiv/html5shiv.js"></script><![endif]-->
+
+	<title>任务 · 拯救小扎</title>
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/left_nav.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/taski/style.css">
+	<link href="/javascripts/google-code-prettify/prettify.css" rel="stylesheet">
+	<style type="text/css">
+		/* 内容中的表格 */
+		td, th {
+			padding: 0px 10px;
+			border: 1px solid #ddd;
+		}
+		/* 阶段验证结果 */
+		.work>div.alert {
+			position: absolute;
+			right: 0;
+			left: 0;
+			bottom: 27px;
+			display: block;
+			z-index: 4;
+		}
+		.work>div.alert>span.description{
+			font-weight: bold;
+		}
+		.work>div.alert-error>span.description{
+			float: left;
+		}
+		/* 删除文件图标 */
+		.work-tabs-wrap>li {
+			position: relative;
+		}
+		.work-tabs-wrap>li i.icon-minus {
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			right: 4px;
+			opacity: .5;
+			display: none;
+			cursor: pointer;
+		}
+		.work-tabs-wrap>li:hover i.icon-minus {
+			display: inline-block;
+		}
+		.work-tabs-wrap>li:hover i.icon-minus:hover {
+			opacity: 1;
+		}
+	</style>
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+	<script type="application/json" id="tasks-data">
+		<%- task%>
+	</script>
+	<script type="application/json" id="user-data">
+		<%- user%>
+	</script>
+	<!--google analytics-->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39259121-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<script type="text/javascript">var mc2 = {};//全局名字空间</script>
+</head>
+	
+<body style="position: static;overflow-x: hidden;">
+	<!-- 引入左边导航栏 -->
+	<% include /left_nav %>
+	<div class="wrap">
+		<div class="work">
+			<div class="work-tabs">
+				<ul class="work-tabs-wrap nav-tabs">
+				  <li class="hide"><a href="#"><i class="icon-plus"></i></a></li>
+				</ul>
+			</div>
+			<div class="work-editarea">
+				<div id="editarea" class="editarea"></div>
+			</div>
+			<div class="work-funbar">
+				<a href="#modal-result" class="btn funbar-preview" title="Ctrl-R" data-toggle="modal" data-target="#modal-result"><i class="icon-play"></i>运行</a>
+				<a href="#" class="btn funbar-save" title="Ctrl-S"><i class="icon-download-alt"></i>保存</a>
+				<a href="#" class="btn btn-success funbar-submit" title="Ctrl-U"><i class="icon-ok"></i>提交</a>
+			</div>
+		</div>
+		<div class="course">
+			<div class="course-progress">
+				<div class="breadcrumb-wrap">
+					<a class="help" href="#"><i class="icon-question-sign"></i>求助</a>
+					<ul class="breadcrumb">
+						<li><a href="/section?sectionNo=0">任务板</a><span class="divider">/</span></li>
+						<li class="active"></li>
+					</ul>
+				</div>
+				<div class="steps-wrap">
+					<div class="steps">
+						<ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="course-content">
+			</div>
+		</div>
+		<!-- 收起课程面板.course -->
+		<div class="course-toggle"><i class="icon-backward"></i></div>
+		<!-- end -->
+		<div id="modal-clear" class="modal inform fade hide" data-backdrop="static">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<div class="misson-done">
+					<h3>成功通关！</h3>
+					<h1>+20<sup>e</sup></h1>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="" class="btn btn-large plusone hide">挑战+1任务</a>
+				<a href="/section?sectionNo=0" class="btn btn-large btn-success back2list">下一个任务</a>
+				<a href="#" class="btn btn-large btn-success goon hide" data-dismiss="modal" aria-hidden="true">继续</a>
+			</div>
+		</div>
+	</div>
+	<div id="modal-result" class="modal result fade" style="display:none;top:0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+		<div class="modal-header">
+			<div class="modal-header-wrap">
+				<ul>
+					<li class="modal-header-next">
+						<a class="btn btn-large btn-success" href="http://moshifang.com/section?sectionNo=0">下一个任务</a>
+					</li>
+					<li class="modal-header-share">
+						<p>成功通关！分享作品给朋友看看：</p>
+						<!-- JiaThis Button BEGIN -->
+						<div class="jiathis_style_32x32">
+							<a class="jiathis_button_copy"></a>
+							<a class="jiathis_button_tsina"></a>
+							<a class="jiathis_button_tqq"></a>
+							<a class="jiathis_button_renren"></a>
+						</div>
+						<!-- JiaThis Button END -->
+					</li>
+					<li class="modal-header-reward">
+						<div class="energy">+5<sup>e</sup></div>
+					</li>
+				</ul>
+			</div>
+			
+			
+		</div>
+		<a type="button" class="close" data-dismiss="modal" aria-hidden="true" title="按ESC也能关闭哦~">×</a>
+		<iframe id="modal-preview"></iframe>
+	</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/google-code-prettify/prettify.js"></script>
+<script src="/javascripts/src-min-noconflict/ace.js"></script>
+<script src="/javascripts/taski/content.js"></script>
+<script src="/javascripts/taski/application.js"></script>
+<script src="/javascripts/taski/editor.js"></script>
+<script src="/javascripts/taski/validation.js"></script>
+<script src="/javascripts/taski/stage.js"></script>
+<script src="/javascripts/taski/file_tab.js"></script>
+<script type="text/javascript">
+	var jiathis_config={
+		data_track_clickback:true,
+		summary:"",
+		hideMore:false
+	};
+	$(function(){
+		$(".course").animate({right:"0px"},"slow");
+		$(".course-toggle").animate({right:"431px"},"slow",function(){
+			$(this).find("i").toggleClass("icon-backward icon-forward");
+		});
+
+		$("pre").addClass("prettyprint");
+    	prettyPrint();
+
+		$(".tasks").closest("li").addClass("active");
+
+		$(".course-toggle").click(function(){
+			$(this).toggleClass("fullscreen");
+			$(".work").toggleClass("fullscreen");
+			$(this).find("i").toggleClass("icon-forward icon-backward");
+			// $(".course").toggle(
+			// 	function(){
+			// 		$(this).animate("right":0);
+			// 	},
+			// 	function(){
+			// 		$(this).animate("right":0);
+			// 	}
+			// );
+			$(".course").toggle();
+			mc2.taski.editor.resize();
+		});
+
+		$(".breadcrumb-wrap .help").click(function(){
+			alert("求助功能无力兼顾T T，大家如有疑问请加QQ群：283310885，我们将尽情为你解答~");
+		});
+	});
+	$(function () {
+		jiathis_config.url = "http://moshifang.com/u/"+mc2.user.name+"/"+mc2.taski.task_seq;
+	});
+
+
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677550" charset="utf-8"></script>
+
+<% include /denglu_board %>
+</body>
+</html>

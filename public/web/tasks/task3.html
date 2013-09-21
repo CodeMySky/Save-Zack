@@ -1,0 +1,322 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!--[if lt IE 9]><script src="/commons/static/js/html5shiv/html5shiv.js"></script><![endif]-->
+		<title>拯救小扎</title>
+		<link rel="shortcut icon" href="" type="image/x-icon">
+		<link rel="icon" href="" type="image/x-icon">
+	    <link rel="stylesheet" type="text/css" href="./index_files/code_color.css">
+		<link rel="stylesheet" type="text/css" href="./index_files/header_footer.css">
+        <link rel="stylesheet" type="text/css" href="./index_files/buttons.css">
+        <link rel="stylesheet" type="text/css" href="./index_files/fs_style_new.css">
+		<link rel="stylesheet" type="text/css" href="./index_files/qa.css">
+		
+		<link rel="stylesheet" type="text/css" href="./index_files/jquery.fancybox.css">
+        <link rel="stylesheet" type="text/css" href="./index_files/jquery.qtip.min.css">
+
+		<style type="text/css">
+			.editarea {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.code_box {
+				display: block;
+				font-family: Helvetica, Arial, sans-serif;
+				padding: 9.5px;
+				margin: 0 0 10px;
+				line-height: 20px;
+				background-color: #f5f5f5;
+				border: 1px solid #ccc;
+				border: 1px solid rgba(0, 0, 0, 0.15);
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				-ms-border-radius: 4px;
+				border-radius: 4px;
+			}
+			.progress p {
+				margin: 0;
+				font-size: 14px;
+			}
+			.lessonNav {
+				text-align: center;
+				margin-bottom: 1em;
+				margin-top: 0.5em;
+			}
+			.lessonNav ul.nav{
+				list-style: none;
+				list-style-image: none;
+				margin: 0;
+				padding: 0;
+			}
+			.lessonNav ul.nav li{
+				display: inline-block;
+				float: none;
+			}
+			.lessonNav ul.nav li.active,.lessonNav ul.nav li:hover{
+				padding-bottom: 3px;
+				color: #3B4D26;
+	   			border-bottom: 3px solid #3B4D26;
+			}
+			.lessonContent{
+				overflow-y:auto;
+				padding:0.5em 0.5em;
+				position: absolute;
+				right: 0;
+				left: 0;
+				top: 0;
+				bottom: 0;
+			}
+		</style>
+		<link rel="shortcut icon" href="/images/favicon.png">
+	</head>
+	<body class="ide" data-twttr-rendered="true" style="position: static;">
+		<header>
+			<div id="header">
+				<a id="home" href="./index.html" title="home">
+					<h1 style="margin-bottom: 0em;">
+						<img src="./index_files/logo2.png">
+					</h1>
+				</a>
+				<ul class="menu">
+					<li class="category">
+						<span class="profile_pic">
+							<img src="./index_files/002_13.png" width="25" height="25">
+						</span>     	
+						<a href="./index_files/index.html" class="logged">
+							穿越人<!-- 名字放这里 -->
+						</a>
+					</li>
+				</ul>
+				<nav>
+					<ul>
+						<li class="active">
+							<a href="#">任务</a>
+						</li>
+						<!-- <li>
+							<a href="http://www.learnstreet.com/cg/simple/projects/javascript">地图</a>
+						</li>
+						<li>
+							<a href="http://www.learnstreet.com/dev_tools/">挑战</a>
+						</li> -->
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+<div class="workbench garage">
+	<div class="pane work console-only">
+		<div class="console">
+			<div id="editarea" class="editarea"></div>
+		</div>
+		<a href="#" class="test buttonGreen" title="Ctrl+R" style="
+			width: 4.5em;  position: absolute;  bottom: 0.6em;  
+			right: 4.5em;
+		">运行代码</a>
+		<a href="#" class="submit buttonGreen help" title="Ctrl+U">提交</a>
+	</div>
+
+	<div class="pane course">
+		<!-- RIGHT HAND PANE -->
+		<!-- right pane inner contents -->
+		<div class="lesson">
+			<div class="progress">
+				<p>所有任务 &gt;&gt; 一点功能-javascript简单入门</p>
+				<div class="steps">
+					<ul>
+						<li id="il-set-0" class="" style="display:none">
+							<a class=" " href="./e2/index.html" target="_blank">目标</a>
+						</li>
+						<li id="il-set-1" class="revisit">
+							<a class="current" title="Revisit this lesson">1</a>
+						</li>
+						<li id="il-set-2" class="revisit">
+							<a class=" " title="Resume course">2</a>
+						</li>
+						<li id="il-set-3" class="revisit">
+							<a class=" ">3</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="lesson content" id="idetails-1">
+				<div class="lessonContent" data-spy="scroll" data-target="#lessonNav" data-offset="0">
+					<h1>Javascript是什么，怎么引入</h1>
+					<h4 id="task1-1-course">攻略</h4><hr/>
+					<p>
+						前面了解过html和css（神马？已经不记得了？！点击回归下:
+						<a href="http://42.121.109.209:3000/web/tasks/task1.html" target="_blank">html</a>, <a  target="_blank" href="http://42.121.109.209:3000/web/tasks/task2.html">css</a>）<br/>
+						就剩下网页制作三剑客最后一个——Javascript，简称js<br/>
+						介绍css时，我们用过这样的例子：html是美女，css是化妆，那么js就是美女的才艺，她会唱歌、跳舞等等<br/>
+						JavaScript 是用来向HTML页面添加交互行为的脚本语言。<br/>
+						比如，点击这个按钮后:<button onclick="alert('hello~ 你好呀')">点我试试</button>
+					</p>
+					<p>
+						添加js有2种方法：
+					</p>
+					<ol>
+						<li><p>
+							在head标签、或者body标签里添加&lt;script&gt;标签 ←初学者墙裂推荐
+							<code class="code_box">
+								&lt;script type="text/javascript"&gt;<br/>
+								alert(“hello world!“);<br/>
+								&lt;/script&gt;
+							</code>
+						</p></li>
+						<li><p>
+							head标签里引入js文件 ←nb了一般这么做<br/>
+							<code class="code_box">
+								&lt;script type="text/javascript" src="xxx.js" &gt;&lt;/script&gt;<br/>
+							</code>
+							src属性中填入js文件地址
+						</p></li>
+					</ol>
+					<p>
+						正规教程：<br/>
+						<a href="http://www.w3school.com.cn/js/js_intro.asp" target="_blank">js简介</a><br/>
+						<a href="http://www.w3school.com.cn/js/js_howto.asp" target="_blank">js使用</a>
+					</p>
+					<br/>
+					<h4 id="task1-1-steps">步骤</h4><hr>
+					<p>
+						添加一个script标签
+					</p>
+				</div>
+			</div>
+			<div class="lesson content" id="idetails-2" style="display:none">
+				<div class="lessonContent" data-spy="scroll" data-target="#lessonNav" data-offset="0">
+					<h1>alert</h1>
+					<h4 id="task1-1-course">攻略</h4><hr/>
+					<p>
+						入门阶段使用最多的js命令是alert()，弹出消息框
+						<code class="code_box">
+							alert("hello world");
+						</code>
+						<ul>
+							<li><p>
+								每一个js语句结束，务必记得加上“;”
+							</p></li>
+							<li><p>
+								为了区分文本和js语句，文本一定要加上引导（单双均可）
+							</p></li>
+						</ul>
+					</p>
+					<br>
+					<h4 id="task1-1-steps">步骤</h4><hr>
+					<p>
+						script标签添加alert命令。
+					</p>
+				</div>
+			</div>
+			<div class="lesson content" id="idetails-3" style="display:none">
+				<div class="lessonContent" data-spy="scroll" data-target="#lessonNav" data-offset="0">
+					<h1>按钮点击</h1>
+					<h4 id="task1-1-course">攻略</h4><hr/>
+					<p>
+						当用户点击页面的某个按钮或其他元素时，我们可以通过js来获取这个事件，并做出响应。<br/>
+						通常需要两步：
+					</p>
+					<ol>
+						<li><p>
+						得到某个元素
+						</p></li>
+						<li><p>
+						监听这个元素的事件
+						</p></li>
+					</ol>
+					<p>
+						例子：
+						<code class="code_box">
+						&lt;script&gt;<br/>
+						document.getElementById("button1").onclick = function () {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;alert("我被点击了！");<br/>
+						}<br/>
+						&lt;/script&gt;
+						</code>
+						其中，button1是某个标签的id属性的值。(在<a href="http://42.121.109.209:3000/web/tasks/task1.html" target="_blank">任务1</a>中最后一个练习被介绍)<br/>
+						document.getElementById就是通过id来得到元素<br/>
+						onclick对应这个元素的点击事件，当这个事件被触发时，会执行"function() {" 和 "}"之间的代码。<br/>
+						<br/>
+						正规教程：<a href="http://w3school.com.cn/js/js_htmldom_events.asp" target="_blank">JavaScript 事件</a>
+					</p>
+					<br/>
+					<h4 id="task1-1-steps">步骤</h4><hr>
+					<p>
+						在style标签里添加代码，监听页面中的一个button元素的点击事件
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- end .lesson -->
+	</div>
+</div>
+
+<!-- Badge Status Modal - To Be Hidden -->
+<div id="projectCompleted" class="profile">
+	<div class="description">
+		<h2>Well done. You did great!</h2>
+		<p>
+			You achieved Javascript For Beginners badge!
+		</p>
+		
+		<img class="badge huge" width="189px" src="./index_files/icon_javascript_basic.png">
+		<div class="sharing">
+			<p class="sharing_text">
+				Share this achievement
+			</p>
+			<div class="iconSN">
+				<a href="javascript:void(0);" onclick="FBShare(&quot;complete&quot;, &quot;COURSE&quot;); return false;" class="fbIcon"></a>
+			</div>
+			<div class="iconSN" id="tweet">
+				<a href="javascript:void(0)" onclick="popUp('tweeter', 'complete', 'COURSE'); return false;" class="twitterIcon" data-count="none" title="Share on Twitter"></a>
+			</div>
+			<div class="iconSN">
+				<a href="./index_files/index.html" onclick="popUp('tumbler', 'complete', 'COURSE');" class="tumblrIcon" title="Share on Tumblr"></a>
+			</div>
+			<div class="iconSN">
+				<a href="javascript:void(0)" onclick="popUp('pinterest', 'complete', 'COURSE'); return false;" count-layout="none" id="PinItButton" class="pinitIcon"></a>
+			</div>
+		</div>
+		<p>
+			Now that you have completed this course, try doing this project
+		</p>
+		<div class="project_thumb_box">
+			
+			<img src="./index_files/snakes_project.jpg" class="project_thumb">
+			<div class="project_title">
+				Snakes &amp; Ladders
+			</div>
+			<div class="project_summary">
+				Feeling nostalgic about your childhood? Come build and play a good ol’ game of Snakes and Ladders (aka Chutes and Ladders) and...
+			</div>
+			<div class="button_container">
+				<a href="http://www.learnstreet.com/cg/simple/project/snakes" class="buttonBlue buttonSmall">Slide In!</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+var task_seq = 3;
+</script>
+<script src="./index_files/jquery.min.js"></script>
+<script src="./index_files/tab.js"></script>
+<script src="./index_files/bootstrap-scrollspy.js"></script>
+<script src="../src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="./index_files/editor.js"></script>
+<script src="./index_files/validation.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#idetails-1').scrollspy();
+	<!-- $("#idetails-1").scroll(function(){
+		$("#tab_nav").css("top",Math.max(100,130-$(this).scrollTop()));
+	}); -->
+})	
+</script>
+</body>
+</html>

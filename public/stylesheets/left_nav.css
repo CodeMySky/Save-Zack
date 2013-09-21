@@ -1,0 +1,172 @@
+/*nav leftside*/
+/* 为了方便统一，把leftside的css也统一放到这个文件里了 */
+.nav{
+	border-right: 1px solid #ebebeb;
+	width: 80px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #f1f1f1;
+}
+a.logo {
+	background-color: rgba(61,61,61,0.9);
+	background-color: rgb(61,61,61)\0;
+	width: 80px;
+	height: 101px;
+	display: block;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom: 0;
+}
+a.logo.active {
+	background-color: black;
+	width: 81px;
+	height: 101px;
+	display: block;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom: 0;
+}
+a.logo span {
+	background-image: url(/images/logo.png);
+	width: 63px;
+	height: 33px;
+	text-indent: -999999px;
+	margin: auto;
+	display: block;
+	position: relative;
+	top: 33px;
+	left: 1px;
+}
+.nav ul {
+	margin: 101px 0 0 0;
+	padding: 0;
+}
+.nav ul li {
+	list-style-type: none;
+	border-bottom: 1px solid #ebebeb;
+}
+.nav ul.navbar li a i {
+	position: relative;
+	top: 35px;
+	/*left: 13px;*/
+}
+.nav ul li.active a{
+	background-color:white;
+	color:black;
+	border-right:none;
+}
+.nav ul li:hover .title{
+	color: #525252;
+}
+.nav ul.navbar li a {
+	font-size: 18px;
+	width: 81px;
+	display: block;
+	height: 101px;
+	text-align: center;
+	text-decoration: none;
+	color: #b9b9b9;
+	border-bottom: 0;
+}
+.nav ul li div.progress {
+	position: relative;
+	top: 50px;
+	width: 50%;
+	margin: 0 auto;
+}
+.nav ul li a .title {
+	/*font-family: "dottedfont-CH";*/
+	position: relative;
+	top: 32px;
+	font-size: 13px;
+	word-break:keep-all;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.nav ul.otherbar{
+	position: fixed;
+	bottom: 0px;
+	margin:0;
+}
+.nav ul.otherbar li{
+	width: 26px;
+	float: left;
+	border-left: 1px solid #D8D8D8;
+}
+.nav ul.otherbar li i{
+	margin-left: 5.5px;
+}
+
+/* 用户头像、昵称 */
+.profile>img {
+	width: 25px;
+	position: relative;
+	top: 22px;
+}
+.nav ul li a.profile .title.named{
+	top:22px;
+}
+.nav ul li a.profile .energy{
+	position: relative;
+	top: 22px;
+	color: #66CA7D;
+	text-shadow: 0 1px 1px #ccc;
+	}
+.nav ul li a.profile>span {
+	display: block;
+	left: 0;
+	top: 35px;
+}
+.nav ul li a.profile>div.progress {
+	top: 32px
+}
+/*icons*/
+i.dotted-completed {
+	background-image:url('/images/004_16.png');
+	margin-top: -4px;
+}
+i.dotted-locked {
+	background-image:url('/images/005_12.png');
+	margin-top: -2px;
+}
+
+[class^="dotted-"], [class*=" dotted-"] {
+	display: inline-block;
+	vertical-align: text-top;
+	background: url(/images/sprites.png) no-repeat top left;
+}
+/*icons*/
+.dotted-tasks{ background-position: -1592px 0; width: 18px; height: 18px; }
+.dotted-challenge{ background-position: -136px 0; width: 18px; height: 18px; } 
+.dotted-square{ background-position: -1388px 0; width: 18px; height: 18px; } 
+.dotted-profile{ background-position: -1056px 0; width: 18px; height: 18px; } 
+.dotted-map{ background-position: -660px 0; width: 18px; height: 18px; } 
+.navbar li:hover .dotted-profile{ background-position: -988px 0; width: 18px; height: 18px; }
+.navbar li:hover .dotted-square{ background-position: -1320px 0; width: 18px; height: 18px; } 
+.navbar li:hover .dotted-map{ background-position: -592px 0; width: 18px; height: 18px; } 
+.navbar li:hover .dotted-challenge{ background-position: -68px 0; width: 18px; height: 18px; } 
+.navbar li:hover .dotted-tasks{ background-position: -1524px 0; width: 18px; height: 18px; } 
+.navbar li.active .dotted-profile{ background-position: -920px 0; width: 18px; height: 18px; } 
+.navbar li.active .dotted-tasks{ background-position: -1456px 0; width: 18px; height: 18px; } 
+.navbar li.active .dotted-map{ background-position: -524px 0; width: 18px; height: 18px; }
+.navbar li.active .dotted-challenge{ background-position: 0 0; width: 18px; height: 18px; } 
+.navbar li.active .dotted-square{ background-position: -1252px 0; width: 18px; height: 18px; } 
+
+.dotted-help:hover{ background-position: -268px 0; width: 14px; height: 14px; } 
+.dotted-help{ background-position: -332px 0; width: 14px; height: 14px; } 
+.dotted-logout:hover{ background-position: -396px 0; width: 14px; height: 14px; } 
+.dotted-logout{ background-position: -460px 0; width: 14px; height: 14px; } 
+.dotted-setting:hover{ background-position: -1124px 0; width: 14px; height: 14px; } 
+.dotted-setting{ background-position: -1188px 0; width: 14px; height: 14px; } 
+
+.dotted-edit{ background-position: -204px 0; width: 14px; height: 14px; } 
+.dotted-plus{ background-position: -728px 0; width: 14px; height: 14px; } 
+.btn-preview:hover .dotted-preview{ background-position: -792px 0; width: 14px; height: 14px; } 
+.dotted-preview{ background-position: -856px 0; width: 14px; height: 14px; } 

@@ -1,0 +1,49 @@
+.icon-book,.icon-map,.icon-bell,.icon-users,.icon-user,.icon-busy,.icon-search,.icon-lock,.icon-hammer,.icon-list,.icon-flag,.icon-cool,.icon-checkmark,.icon-plus {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background-image: url(../images/sprites.png);
+	background-repeat: no-repeat;
+}
+.icon-book {
+	background-position: 0 0;
+}
+.icon-map {
+	background-position: -28px 0;
+}
+.icon-bell {
+	background-position: -56px 0;
+}
+.icon-users {
+	background-position: -84px 0;
+}
+.icon-user {
+	background-position: -112px 0;
+}
+.icon-busy {
+	background-position: -140px 0;
+}
+.icon-search {
+	background-position: -168px 0;
+}
+.icon-lock {
+	background-position: -196px 0;
+}
+.icon-hammer {
+	background-position: -224px 0;
+}
+.icon-list {
+	background-position: -252px 0;
+}
+.icon-flag {
+	background-position: -280px 0;
+}
+.icon-cool {
+	background-position: -308px 0;
+}
+.icon-checkmark {
+	background-position: -336px 0;
+}
+.icon-plus {
+	background-position: -364px 0;
+}

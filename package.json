@@ -1,0 +1,14 @@
+{
+  "name": "saveZack",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.6",
+    "ejs": "*",
+    "connect-mongo": ">= 0.1.7",
+    "mongoose": ">=3.5.5"
+  }
+}

@@ -1,0 +1,36 @@
+//仅供参考！！！！
+//版块 任务 阶段
+{
+	"no":"1",
+	"info":{
+		"target":"/balabala.html",
+		"requiredEnergy":10,
+		"title":"HTML入门",
+		"taskImg":"/stage1.jpg",
+		}
+	"stage":[{
+		"title":"HTML是什么？",
+		"description":"HTML是用来制作网页最基本的语言",
+		"step":"点击代码框下方的“提交”按钮进入下一阶段"
+		"validation":[
+			null,
+			[
+				{
+					reg: /<!DOCTYPE\s*>/,
+					error_info: '貌似你还没有添加DOCTYPE标签哦~~'
+				},
+				{
+					reg: /<html(?:\s+[^>]*)?>/,
+					error_info: '你还没有添加html标签哦~~'
+				}
+			],
+			
+		]
+	}]
+}
+		
+		
+		
+		
+		
+	

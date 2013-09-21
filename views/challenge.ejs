@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--[if lt IE 9]><script src="/commons/static/js/html5shiv/html5shiv.js"></script><![endif]-->
+	
+	<title>挑战 · 模式方：拯救小扎</title>
+	
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/left_nav.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/puzzle/style.css">
+
+	<link rel="shortcut icon" type='image/x-icon' href="/images/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+	<script type="application/json" id="challenge-data">
+		<%- challenge%>
+	</script>
+	<script type="application/json" id="user-data">
+		<%- user%>
+	</script>
+	<script type="text/javascript">var mc2 = {};//全局名字空间</script>
+	<!--google analytics-->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39259121-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<!-- ~google analytics -->
+</head>
+
+<body style="position: static;">
+	<!-- 引入左边导航栏 -->
+	<% include /left_nav %>
+	<div class="nav hide"> 
+		<a href="/" class="logo"><span>MC²</span></a> 
+		<ul class="navbar"> 
+			<li> 
+				<a href="#" class="profile"> 
+					<img src="http://tp1.sinaimg.cn/1702812624/50/5655983032/1">
+					<div class="title named">Dennis凯</div>
+					<div class="energy"><span class="score">5</span><sup>e</sup></div> 
+             </a> 
+       		</li> 
+        	<li><a href="/section?sectionNo=0#" class="tasks"><i class="dotted-tasks"></i><div class="title">任务</div></a></li> 
+        	<li class="hide"><a href="#" class="map"><i class="dotted-map"></i><div class="title">地图</div></a></li>			 
+        	<li class="active"><a href="#" class="challenge"><i class="dotted-challenge"></i><div class="title">挑战</div></a></li> 
+        	<li class="hide"><a href="#" class="square"><i class="dotted-square"></i><div class="title">广场</div></a></li> 
+	    </ul> 
+	    <ul class="otherbar hide"> 
+	        <li><a href="#" class="help" title="帮助"><i class="dotted-help"></i></a></li> 
+	     	<li><a href="#" class="setting" title="设置"><i class="dotted-setting"></i></a></li> 
+	     	<li><a href="/logout" class="logout" title="注销"><i class="dotted-logout"></i></a></li> 
+	    </ul> 
+	</div> 
+
+	<div class="wrap">
+  		<% if (locals.success) {%>
+			<div class="alert alert-success" >
+			  <strong><%= locals.success%></strong>
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+  		<% } %>
+  		<% if (locals.error){%>
+			<div class="alert alert-error" >
+			  <strong><%= locals.error%></strong>
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+  		<% } %>
+		<div class="puzzle-list">
+			<ul>
+				<li class="lock">
+					<div class="puzzle-wrap">
+						<div class="puzzle-logo">
+							<img src="http://www.bootcss.com/p/flat-ui/images/illustrations/infinity.png" title="竞赛">
+						</div>
+						<div class="puzzle-lock">
+							锁定：达到100<sup>e</sup>开放 (56/100<sup>e</sup>)
+						</div>
+					</div>
+				</li>
+				<li class="active">
+					<div class="puzzle-wrap">
+						<div class="puzzle-logo">
+							<img src="http://www.bootcss.com/p/flat-ui/images/illustrations/infinity.png">
+						</div>
+						<div class="puzzle-detail">
+							<h1>个人页面</h1>
+							<p>据说做一个个人页面可以帮助小扎恢复记录，我们...还是做吧！</p>
+							<p><i class="icon-flag"></i> 目标：一个能够介绍清楚一个人信息的网页</p>
+							<div class="puzzle-detail-score">
+								<i class="icon-thumbs-up"></i>最好成绩：
+								<span class="rank">暂无<!-- 第<b>1</b>名 --></span>
+								<span class="like" style="display:none;"><i class="icon-heart"></i>237</span>
+							</div>
+						</div>
+						<div class="puzzle-btn">
+							<a href="http://moshifang.com/web/puzzle/edit.html" class="puzzle-btn-start">马上挑战</a>
+							<div>首次挑战奖励：20<sup>e</sup></div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="puzzle-wrap">
+						<div class="puzzle-logo">
+							<img src="http://www.bootcss.com/p/flat-ui/images/illustrations/colors.png">
+						</div>
+						<div class="puzzle-detail">
+							<h1>个人页面</h1>
+							<p>据说做一个个人页面可以帮助小扎恢复记录，我们...还是做吧！</p>
+							<p><i class="icon-flag"></i> 目标：一个能够介绍清楚一个人信息的网页</p>
+							<div class="puzzle-detail-score">
+								<i class="icon-thumbs-up"></i>最好成绩：
+								<span class="rank">第<b>1</b>名</span>
+								<span class="like"><i class="icon-heart"></i>237</span>
+							</div>
+						</div>
+						<div class="puzzle-btn">
+							<a class="puzzle-btn-again">刷新纪录</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="puzzle-wrap">
+						<div class="puzzle-logo">
+							<img src="http://www.bootcss.com/p/flat-ui/images/illustrations/compass.png">
+						</div>
+						<div class="puzzle-detail">
+							<h1>个人页面</h1>
+							<p>据说做一个个人页面可以帮助小扎恢复记录，我们...还是做吧！</p>
+							<p><i class="icon-flag"></i> 目标：一个能够介绍清楚一个人信息的网页</p>
+							<div class="puzzle-detail-score">
+								<i class="icon-thumbs-up"></i>最好成绩：
+								<span class="rank">第<b>1</b>名</span>
+								<span class="like"><i class="icon-heart"></i>237</span>
+							</div>
+						</div>
+						<div class="puzzle-btn">
+							<a class="puzzle-btn-again">刷新纪录</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="puzzle-wrap">
+						<div class="puzzle-logo">
+							<img src="http://www.bootcss.com/p/flat-ui/images/illustrations/infinity.png">
+						</div>
+						<div class="puzzle-detail">
+							<h1>个人页面</h1>
+							<p>据说做一个个人页面可以帮助小扎恢复记录，我们...还是做吧！</p>
+							<p><i class="icon-flag"></i> 目标：一个能够介绍清楚一个人信息的网页</p>
+							<div class="puzzle-detail-score">
+								<i class="icon-thumbs-up"></i>最好成绩：
+								<span class="rank">第<b>1</b>名</span>
+								<span class="like"><i class="icon-heart"></i>237</span>
+							</div>
+						</div>
+						<div class="puzzle-ing">
+							<a href="" target="_blank">查看我的作品</a>
+							<div class="puzzle-detail-score">
+								<i class="icon-resize-full"></i>目前成绩：
+								<span class="rank">第<b>1</b>名</span>
+								<span class="like"><i class="icon-heart"></i>237</span>
+							</div>
+							<div class="puzzle-counttime">剩余：3天1小时</div>
+							<div class="puzzle-share" data-url="http://moshifang.com/u/4960070/7">
+								马上号召朋友支持：
+								<!-- JiaThis Button BEGIN -->
+								<div class="jiathis_style_32x32">
+									<a class="jiathis_button_copy"></a>
+									<a class="jiathis_button_tsina"></a>
+									<a class="jiathis_button_tqq"></a>
+									<a class="jiathis_button_renren"></a>
+								</div>
+								<!-- JiaThis Button END -->
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="puzzle-wrap">
+						<div class="puzzle-logo">
+							<img src="http://www.bootcss.com/p/flat-ui/images/illustrations/infinity.png">
+						</div>
+						<div class="puzzle-detail">
+							<h1>个人页面</h1>
+							<p>据说做一个个人页面可以帮助小扎恢复记录，我们...还是做吧！</p>
+							<p><i class="icon-flag"></i> 目标：一个能够介绍清楚一个人信息的网页</p>
+							<div class="puzzle-detail-score">
+								<i class="icon-thumbs-up"></i>最好成绩：
+								<span class="rank">第<b>1</b>名</span>
+								<span class="like"><i class="icon-heart"></i>237</span>
+							</div>
+						</div>
+						<div class="puzzle-ing">
+							<a href="" target="_blank">查看我的作品</a>
+							<div class="puzzle-detail-score">
+								<i class="icon-resize-full"></i>目前成绩：
+								<span class="rank">第<b>1</b>名</span>
+								<span class="like"><i class="icon-heart"></i>237</span>
+							</div>
+							<div class="puzzle-counttime">剩余：3天1小时</div>
+							<div class="puzzle-share" data-url="http://moshifang.com/u/4960070/1">
+								马上号召朋友支持：
+								<!-- JiaThis Button BEGIN -->
+								<div class="jiathis_style_32x32">
+									<a class="jiathis_button_copy"></a>
+									<a class="jiathis_button_tsina"></a>
+									<a class="jiathis_button_tqq"></a>
+									<a class="jiathis_button_renren"></a>
+								</div>
+								<!-- JiaThis Button END -->
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
+	<% include /denglu_board %>
+	<script src="/javascripts/challenge/content.js"></script>
+	<script type="text/javascript">
+		var jiathis_config={
+			data_track_clickback:true,
+			summary:"",
+			hideMore:false
+		}
+		$(function(){
+			$(".puzzle-list ul li:not(.lock)").mouseenter(function(){
+				$(this).siblings().removeClass("active");
+				$(this).addClass("active");
+			});
+	
+			$(".jiathis_style_32x32").mouseenter(function(){
+				jiathis_config.url=$(this).closest(".puzzle-share").data("url");
+			});
+		});
+	</script>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677550" charset="utf-8"></script>
+</body>
+</html>

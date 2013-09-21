@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>挑战 · 拯救小扎</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/left_nav.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/puzzle/edit/style.css">
+	<style type="text/css">
+	.editarea {
+		/*position: absolute;*/
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+	}
+	</style>
+	<!--[if lt IE 9]><script src="/commons/static/js/html5shiv/html5shiv.js"></script><![endif]-->
+	<link rel="shortcut icon" type='image/x-icon' href="/images/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body style="position: static;">
+	<div class="nav"> 
+		<a href="/" class="logo"><span>MC²</span></a> 
+		<ul class="navbar"> 
+			<li> 
+				<a href="#" class="profile"> 
+					<img src="http://tp1.sinaimg.cn/1702812624/50/5655983032/1">
+					<div class="title named">Dennis凯</div>
+					<div class="energy"><span class="score">5</span><sup>e</sup></div> 
+             </a> 
+       		</li> 
+        	<li><a href="/section?sectionNo=0#" class="tasks"><i class="dotted-tasks"></i><div class="title">任务</div></a></li> 
+        	<li class="hide"><a href="#" class="map"><i class="dotted-map"></i><div class="title">地图</div></a></li>			 
+        	<li class="active"><a href="#" class="challenge"><i class="dotted-challenge"></i><div class="title">挑战</div></a></li> 
+        	<li class="hide"><a href="#" class="square"><i class="dotted-square"></i><div class="title">广场</div></a></li> 
+	    </ul> 
+	    <ul class="otherbar hide"> 
+	        <li><a href="#" class="help" title="帮助"><i class="dotted-help"></i></a></li> 
+	     	<li><a href="#" class="setting" title="设置"><i class="dotted-setting"></i></a></li> 
+	     	<li><a href="/logout" class="logout" title="注销"><i class="dotted-logout"></i></a></li> 
+	    </ul> 
+	</div> 
+	<div class="wrap">
+		<div class="work">
+			<div class="work-tabs">
+				<a class="btn help" href="#"><i class="icon-question-sign"></i>求助</a>
+				<div class="dropdown">
+					<a class="btn dropdown-toggle" id="task-detail" role="button" data-toggle="dropdown" data-target="#">
+						<i class="icon-list-alt"></i>挑战详情
+						<b class="caret"></b>
+					</a>
+					<div class="dropdown-menu" role="menu" aria-labelledby="task-detail">
+						<b>名称：个人页面</b>
+						<p>据说做一个个人页面可以帮助小扎恢复记录，我们...还是做吧！</p>
+						<b>类型：竞赛</b>
+						<p>与其他玩家比比谁的作品被喜欢得最多 </p>
+						<b>目标：一个能够介绍清楚一个人的网页</b>
+						<p>可以是小扎，可以是你，也可以是你的朋友。</p>
+					</div>
+				</div>
+				<ul class="work-tabs-wrap nav-tabs">
+				  <li class="active">
+				    <a href="#">index.html</a>
+				  </li>
+				  <li><a href="#">styles.css</a></li>
+				  <li><a href="#">script.js</a></li>
+				  <li><a href="#"><i class="icon-plus"></i></a></li>
+				</ul>
+			</div>
+			<div class="work-editarea">
+				<div id="editarea" class="editarea"></div>
+			</div>
+			<div class="work-funbar">
+				<a href="#" class="btn funbar-preview" title="Ctrl-R" data-toggle="modal" data-target="#modal-result"><i class="icon-play"></i>运行</a>
+				<a href="#" class="btn funbar-save" title="Ctrl-S"><i class="icon-download-alt"></i>保存</a>
+				<a href="#" class="btn btn-success funbar-submit" title="Ctrl-U"><i class="icon-ok"></i>提交</a>
+				<span class="funbar-counttime">剩下3天10小时</span>
+			</div>
+		</div>
+		<div id="modal-clear" class="modal inform fade hide" data-backdrop="static">
+			<a class="close" data-dismiss="modal" aria-hidden="true" href="/web/puzzle/index.html" title="返回挑战页">×</a>
+			<div class="modal-header">
+				<div class="misson-done">
+					<h3>提交成功</h3>
+					<h1>+20<sup>e</sup></h1>
+					<p>首次挑战获得能量奖励</p>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<p>想获得更好的成绩？马上分享给朋友：</p>
+				<!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style_32x32">
+					<a class="jiathis_button_copy"></a>
+					<a class="jiathis_button_tsina"></a>
+					<a class="jiathis_button_tqq"></a>
+					<a class="jiathis_button_renren"></a>
+				</div>
+				<!-- JiaThis Button END -->
+			</div>
+		</div>
+	</div>
+	<div id="modal-result" class="modal result fade" style="display:none;top:0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+		<a type="button" class="close" data-dismiss="modal" aria-hidden="true" title="按ESC也能关闭哦~">×</a>
+		<iframe src="/web/targets/e6/index.html"></iframe>
+	</div>
+
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/javascripts/editor.js"></script>
+<script type="text/javascript">
+	var jiathis_config={
+		data_track_clickback:true,
+		summary:"",
+		hideMore:false
+	}
+	$(".funbar-submit").click(function(){
+		if (confirm("提交后将不能再修改，请问是否提交？"))
+			$("#modal-clear").modal('show');
+		else return false;
+	});
+	$(".work-tabs .help").click(function(){
+		alert("求助功能无力兼顾T T，大家如有疑问请加QQ群：283310885，我们将尽情为你解答~");
+	});
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677550" charset="utf-8"></script>
+</body>
+</body>
+</html>

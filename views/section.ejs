@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--[if lt IE 9]><script src="/commons/static/js/html5shiv/html5shiv.js"></script><![endif]-->
+
+	<title>模式方—拯救小扎</title>
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/left_nav.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/sprites.css">
+	<style>
+		.thumbnail-poster>img {
+			width: 295px;
+			height: 188px;
+		}
+		.plus_one .like_icon {
+			display: inline-block;
+			background-image: url(/images/good.png);
+			background-position: -25px 0;
+			width: 18px;
+			height: 18px;
+			cursor: pointer;
+			margin-right: 5px;
+		}
+	</style>
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+	<script type="application/json" id="tasks-data">
+		<%- section%>
+	</script>
+	<script type="application/json" id="user-data">
+		<%- user%>
+	</script>
+	<script type="text/javascript">var mc2 = {};//全局名字空间</script>
+	<!--google analytics-->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39259121-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<!-- ~google analytics -->
+</head>
+
+<body style="position: static;">
+	<!-- 引入左边导航栏 -->
+	<% include /left_nav %>
+
+	<div class="wrap">
+  		<% if (locals.success) {%>
+			<div class="alert alert-success" >
+			  <strong><%= locals.success%></strong>
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+  		<% } %>
+  		<% if (locals.error){%>
+			<div class="alert alert-error" >
+			  <strong><%= locals.error%></strong>
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+  		<% } %>
+		<div class="alert alert-success hide" >
+			<strong>可开启新任务，快去看看吧！</strong>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		</div>
+		<div class="list">
+			<div class="row-fluid">
+				<ul class="thumbnails">
+				</ul>
+			</div>
+		</div>
+
+		<div id="modal" class="modal fade" style="display:none" data-backdrop="static">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<div class="modal-task-detail">
+					<h3 id="myModalLabel"></h3>
+					<span>20e</span> | <span>作者：<a href="http://weibo.com/dennisbear" target="_blank">@丹尼屎熊</a></span>
+				</div>
+				<div class="modal-task-btn">
+					<a href="#" class="btn btn-success btn-gotask"><span></span>接受任务</a>
+				</div>
+				<div class="modal-task-share">
+					<a target="_blank" href="#" class="btn btn-info btn-share"><i class="icon-share icon-white"></i>分享作品</a>
+				</div>
+			</div>
+			<div class="modal-body">
+				<iframe src=""></iframe>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
+	<% include /denglu_board %>
+	<script src="/javascripts/tasks/task_content.js"></script>
+	<script src="/javascripts/application.js"></script>
+	<script type="text/javascript">
+		$(".tasks").closest("li").addClass("active");
+		$(function () {
+			$("[data-dismiss]").on("click", function () {
+				$(this).closest("."+$(this).attr("data-dismiss")).
+				addClass("hide").
+				trigger("close");
+				});
+		});
+	</script>
+	<script type="text/javascript">
+		$(function () {
+			if (!mc2.user) {
+				$(".thumbnail.locked").click(function(){
+					$(".denglu-box h4:eq(0)").html("要解锁新任务，你需要登陆来保存所获得的<sup>e</sup>值哦~！");
+					$(".navbar a.profile").trigger("click");
+				});
+			}
+		});
+	</script>
+</body>
+</html>

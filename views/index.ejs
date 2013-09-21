@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<!--[if lt IE 9]><script src="/commons/static/js/html5shiv/html5shiv.js"></script><![endif]--> 
+	<title>模式方—拯救小扎</title> 
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/left_nav.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/home_page.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/sprites.css">
+	<script type="text/javascript">var mc2 = {}</script>
+	<script type="application/json" id="user-data">
+		<%- user%>
+	</script>
+	<!--google analytics-->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39259121-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+<body>
+	<% include left_nav %>
+	<div class="wrap">
+  		<% if (locals.success) {%>
+			<div class="alert alert-success" >
+			  <strong><%= locals.success%></strong>
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+  		<% } %>
+  		<% if (locals.error){%>
+			<div class="alert alert-error" >
+			  <strong><%= locals.error%></strong>
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+  		<% } %>
+		<div class="container">
+			<div class="imac">
+				<div class="screen">
+					<img src="/images/poster.jpg">
+					<div class="description">
+						<h1>拯救小扎</h1>
+						<p>时间允许我们穿越回十年前——2003年9月，哈佛校园。一名叫小扎的同学，正在策划一个将来要伟大的网站facebook。拥有一个伟大的梦想是不错，可是由于你的穿越，撞到了小扎的头，他…失忆了，变成一个对网页编程战斗力只有5的小白。
+						<br/>
+						肿么办？你可以选择取代小扎，创建一个属于你的facebook，也可以帮忙小扎重塑一个“非死不可”，世界在你手中。</p>
+						<a href="/section?sectionNo=0" class="btn btn-primary btn-large btn-block">马上开始！</a>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid demo-tiles">
+				<div class="span3">
+					<div class="tile">
+						<img class="tile-image big-illustration" src="images/illustrations/compass.png" />
+						<h3 class="tile-title">重塑非死不可帝国</h3>
+						<p>学习编程，不再孤独前行</p>
+						<p>朋友和大牛跟你一起成长！</p>
+					</div>
+				</div>
+				<div class="span3">
+					<div class="tile">
+						<img class="tile-image" src="images/illustrations/settings.png" />
+						<h3 class="tile-title">游戏化的编程世界</h3>
+						<p>现实世界如此枯燥，</p>
+						<p>我们为什么不快乐地学习？</p>
+					</div>
+				</div>
+				<div class="span3">
+					<div class="tile">
+						<img class="tile-image" src="images/illustrations/colors.png" />
+						<h3 class="tile-title">独创的能量<sup>e</sup>系统</h3>
+						<p>能量<sup>e</sup>能告诉你距离大牛有多近！</p>
+						<p>只要你马上<a href="/section?sectionNo=0">启动</a></p>
+					</div>
+				</div>
+				<!-- <div class="span3">
+					<div class="tile tile-hot">
+						<img class="tile-image big-illustration" src="images/illustrations/share.png" />
+						<h3 class="tile-title">学习真正有用的技能</h3>
+						<p>传统教育已经使你疲惫不堪，试试轻松好玩的旅程吧！</p>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<p>官方QQ群：283310885</p>
+				<br>
+				<p>程序 <a href="http://weibo.com/u/2669697467" target="_blank">@just_write</a> and <a href="http://weibo.com/u/1855627747" target="_blank">@小小小小小小霄</a>.</p>
+				<p>课程设计 <a href="http://weibo.com/dennisbear" target="_blank">@丹尼屎熊</a></p>
+				<p>招募对拯救小扎有感觉的你加入！</p>
+				<p>我们需要：像素画设计师 游戏数值策划 以及 课程设计师</p>
+				<ul class="footer-links">
+					<!-- <li><a href="./about.html" target="_blank">关于</a></li>
+					<li class="muted">&middot;</li>
+					<li><a href="https://github.com/twitter/bootstrap/issues?state=open" target="_blank">问题反馈</a></li>
+					<li class="muted">&middot;</li>
+					<li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">版本变更记录</a></li> -->
+					<li><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备13013290号</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+
+<script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+<% include denglu_board %>
+<script type="text/javascript">
+	$(".logo").addClass("active");
+	mc2.get_user();
+	mc2.denglu();
+	$(function () {
+		$("[data-dismiss]").on("click", function () {
+			$(this).closest("."+$(this).attr("data-dismiss")).
+			addClass("hide").
+			trigger("close");
+			});
+	});
+</script>
+</body>
+</html>

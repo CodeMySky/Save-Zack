@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<style type="text/css">
+			body, html {
+				padding: 0;
+				margin: 0;
+			}
+			#editarea {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				right: 0;
+				bottom: 0;
+				width: 50%;
+				height: 100%;
+			}
+			#result {
+				position: absolute;
+				background-color: #ccc;
+				width: 50%;
+				height: 100%;
+			}
+	</style>
+</head>
+<body>
+	<textarea id="result"></textarea>
+	<div id="editarea"></div>
+	<script src="../src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var editor = ace.edit("editarea");
+		editor.setTheme("ace/theme/twilight");
+		editor.getSession().setMode("ace/mode/javascript");
+		editor.getSession().on('change', function(e) {
+				var str_json = JSON.stringify(editor.getValue());
+				document.getElementById("result").innerHTML = "\"(function(code){"+str_json.slice(1,str_json.length-1) +"})\"";
+		});		
+	</script>
+</body>
+</html>

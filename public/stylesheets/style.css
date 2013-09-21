@@ -1,0 +1,246 @@
+/*index page*/
+.console-background {
+	background-color: #dcdcdc;
+	display:block;
+}
+#billboard{
+	width:auto;
+	margin: 0 0;
+	float: none;
+}
+#billboard img {
+	margin-right: 1.5em;
+	float: left;
+}
+
+/*tasks page*/
+.span4 {
+	width: 24%;
+	display: block;
+	float: left;
+	margin-left: 1%;
+}
+.checkbox:hover{
+	background-color:#ddd;
+}
+.thumbnail.info {
+	border: none;
+	cursor: default;
+	padding: 0;
+	box-shadow: none;
+}
+.thumbnail.info .filter{
+	margin-top: 28px;
+	color: #909090;
+	padding: 9px;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;	
+}
+
+.thumbnail.new .thumbnail-pane{
+	background-color: #F1C40F;
+}
+.thumbnail.accepted .thumbnail-pane{
+	background-color: #3498DB;
+}
+.thumbnail.done .thumbnail-pane{
+	background-color: #2ECC71;
+}
+.thumbnail.plus_one .thumbnail-pane{
+	position: relative;
+}
+.thumbnail.plus_one .caption, .thumbnail.plus_one .thumbnail-detail{
+	background-color: #afa;
+}
+.thumbnail-pane {
+	border-bottom: 1px solid #dcdcdc;
+	height: 26px;
+	line-height: 26px;
+	color: white;
+	padding: 0 9px;
+}
+.thumbnail-pane .pane-award{
+	float:left;
+	display: inline-block;
+}
+.thumbnail-pane .pane-status{
+	float:right;
+	display: inline-block;
+}
+.thumbnail-pane .plus_one{
+	font-weight: bolder;
+	font-size: 25px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+.thumbnail-pane .pane-status span.new{
+	color:yellow;	
+}
+.thumbnail-content {
+	overflow-y: hidden;
+}
+.thumbnail-content-wrap {
+	height: 226px;
+	position: relative;
+	top: 0;
+}
+.thumbnail-content .backdrop{
+	position: absolute;
+	top: 0;
+	height: 188px;
+	width: 100%;
+	background-color: black;
+	opacity: 0.35;
+	filter: alpha(opacity=35);
+}
+.thumbnail .thumbnail-poster img{
+	width:100%;
+}
+.thumbnail-poster {
+	/* height: 199px; */
+	
+}
+.thumbnail-poster .caption h5{
+	margin:0;
+	text-shadow: 0 1px 1px #ccc;
+}
+.thumbnail-detail {
+	background-color:#ECECEC;
+	position: relative;
+	padding:9px;
+}
+.thumbnail-detail .thumbnail-detail-content{
+	height: 208px;
+}
+.thumbnail-detail .thumbnail-detail-btn{
+	position: absolute;
+	left: 50%;
+	bottom: 23px;
+	margin-left: -51px;
+}
+/*.thumbnail.completed .pane-award{
+	color: green;
+}
+.thumbnail.new .pane-status,.new.pane-status{
+	color: rgb(255, 185, 56);
+	font-weight: bold;
+}
+.thumbnail.underway .pane-status,.underway.pane-status{
+	color: #0088cc;
+}
+.thumbnail.completed .pane-status,.completed.pane-status{
+	color: green;
+}*/
+.thumbnail.locked .pane-status,.thumbnail.locked .pane-award,.locked.pane-status,.thumbnail.locked .plus_one{
+	color: gray;
+}
+.thumbnail.locked .caption h5 {
+	color: #ccc;
+	text-shadow: 0 -1px 0 rgba(000,000,000,0.3),0 0 0 rgba(255,255,255,0);
+}
+.thumbnail.locked.plus_one .caption h5 {
+	color: #999;
+}
+.thumbnail-lock-img{
+	position: absolute;
+	width: 70px;
+	top: 50%;
+	left: 50%;
+	margin: -40px -35px;
+}
+
+.wrap{
+	position: absolute;
+	right: 0;
+	left: 81px;
+	top: 0;
+}
+.thumbnail-detail-btn a i,.modal-task-btn a i{
+	margin-right: 5px;
+	margin-top: 1px;
+}
+
+/*tasks modal*/
+.modal .modal-task-detail{
+	width:70%;
+	float:left;
+	margin-left:20px;
+}
+.modal .modal-task-btn,.modal .modal-task-share {
+	float:right;
+	margin-right:20px;
+	margin-top:10px;
+}
+.modal .modal-task-share>a>i{
+	margin-right: 3px;
+}
+.modal-body{
+	clear:both;
+}
+.modal iframe {
+	width:100%;
+	height: 500px;
+	border: none;
+	
+}
+/*alert*/
+.alert button.close{
+	float: none;
+	right: 0;
+}
+/*icons
+i.dotted-completed {
+	background-image:url('/images/004_16.png');
+	margin-top: -4px;
+}
+i.dotted-locked {
+	background-image:url('/images/005_12.png');
+	margin-top: -2px;
+}
+
+[class^="dotted-"], [class*=" dotted-"] {
+	display: inline-block;
+	vertical-align: text-top;
+	background: url(/images/sprites.png) no-repeat top left;
+}
+
+.dotted-tasks{ background-position: -1592px 0; width: 18px; height: 18px; }
+.dotted-challenge{ background-position: -136px 0; width: 18px; height: 18px; } 
+.dotted-square{ background-position: -1388px 0; width: 18px; height: 18px; } 
+.dotted-profile{ background-position: -1056px 0; width: 18px; height: 18px; } 
+.dotted-map{ background-position: -660px 0; width: 18px; height: 18px; } 
+.navbar li:hover .dotted-profile{ background-position: -988px 0; width: 18px; height: 18px; }
+.navbar li:hover .dotted-square{ background-position: -1320px 0; width: 18px; height: 18px; } 
+.navbar li:hover .dotted-map{ background-position: -592px 0; width: 18px; height: 18px; } 
+.navbar li:hover .dotted-challenge{ background-position: -68px 0; width: 18px; height: 18px; } 
+.navbar li:hover .dotted-tasks{ background-position: -1524px 0; width: 18px; height: 18px; } 
+.navbar li.active .dotted-profile{ background-position: -920px 0; width: 18px; height: 18px; } 
+.navbar li.active .dotted-tasks{ background-position: -1456px 0; width: 18px; height: 18px; } 
+.navbar li.active .dotted-map{ background-position: -524px 0; width: 18px; height: 18px; }
+.navbar li.active .dotted-challenge{ background-position: 0 0; width: 18px; height: 18px; } 
+.navbar li.active .dotted-square{ background-position: -1252px 0; width: 18px; height: 18px; } 
+
+.dotted-help:hover{ background-position: -268px 0; width: 14px; height: 14px; } 
+.dotted-help{ background-position: -332px 0; width: 14px; height: 14px; } 
+.dotted-logout:hover{ background-position: -396px 0; width: 14px; height: 14px; } 
+.dotted-logout{ background-position: -460px 0; width: 14px; height: 14px; } 
+.dotted-setting:hover{ background-position: -1124px 0; width: 14px; height: 14px; } 
+.dotted-setting{ background-position: -1188px 0; width: 14px; height: 14px; } 
+
+.dotted-edit{ background-position: -204px 0; width: 14px; height: 14px; } 
+.dotted-plus{ background-position: -728px 0; width: 14px; height: 14px; } 
+.btn-preview:hover .dotted-preview{ background-position: -792px 0; width: 14px; height: 14px; } 
+.dotted-preview{ background-position: -856px 0; width: 14px; height: 14px; } 
+*/
+

@@ -1,0 +1,387 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!--[if lt IE 9]><script src="/commons/static/js/html5shiv/html5shiv.js"></script><![endif]-->
+		<title>拯救小扎</title>
+		<link rel="shortcut icon" href="" type="image/x-icon">
+		<link rel="icon" href="" type="image/x-icon">
+	    <link rel="stylesheet" type="text/css" href="./index_files/code_color.css">
+		<link rel="stylesheet" type="text/css" href="./index_files/header_footer.css">
+        <link rel="stylesheet" type="text/css" href="./index_files/buttons.css">
+        <link rel="stylesheet" type="text/css" href="./index_files/fs_style_new.css">
+		<link rel="stylesheet" type="text/css" href="./index_files/qa.css">
+		
+		<link rel="stylesheet" type="text/css" href="./index_files/jquery.fancybox.css">
+        <link rel="stylesheet" type="text/css" href="./index_files/jquery.qtip.min.css">
+
+		<style type="text/css">
+			.editarea {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.code_box {
+				display: block;
+				font-family: Helvetica, Arial, sans-serif;
+				padding: 9.5px;
+				margin: 0 0 10px;
+				line-height: 20px;
+				background-color: #f5f5f5;
+				border: 1px solid #ccc;
+				border: 1px solid rgba(0, 0, 0, 0.15);
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				-ms-border-radius: 4px;
+				border-radius: 4px;
+			}
+			.progress p {
+				margin: 0;
+				font-size: 14px;
+			}
+			.lessonNav {
+				text-align: center;
+				margin-bottom: 1em;
+				margin-top: 0.5em;
+			}
+			.lessonNav ul.nav{
+				list-style: none;
+				list-style-image: none;
+				margin: 0;
+				padding: 0;
+			}
+			.lessonNav ul.nav li{
+				display: inline-block;
+				float: none;
+			}
+			.lessonNav ul.nav li.active,.lessonNav ul.nav li:hover{
+				padding-bottom: 3px;
+				color: #3B4D26;
+	   			border-bottom: 3px solid #3B4D26;
+			}
+			.lessonContent{
+				overflow-y:auto;
+				padding:0.5em 0.5em;
+				position: absolute;
+				right: 0;
+				left: 0;
+				top: 0;
+				bottom: 0;
+			}
+		</style>
+		<link rel="shortcut icon" href="/images/favicon.png">
+	</head>
+	<body class="ide" data-twttr-rendered="true" style="position: static;">
+		<header>
+			<div id="header">
+				<a id="home" href="./index.html" title="home">
+					<h1 style="margin-bottom: 0em;">
+						<img src="./index_files/logo2.png">
+					</h1>
+				</a>
+				<ul class="menu">
+					<li class="category">
+						<span class="profile_pic">
+							<img src="./index_files/002_13.png" width="25" height="25">
+						</span>     	
+						<a href="./index_files/index.html" class="logged">
+							穿越人<!-- 名字放这里 -->
+						</a>
+					</li>
+				</ul>
+				<nav>
+					<ul>
+						<li class="active">
+							<a href="#">任务</a>
+						</li>
+						<!-- <li>
+							<a href="http://www.learnstreet.com/cg/simple/projects/javascript">地图</a>
+						</li>
+						<li>
+							<a href="http://www.learnstreet.com/dev_tools/">挑战</a>
+						</li> -->
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+<div class="workbench garage">
+	<div class="pane work console-only">
+		<div class="console">
+			<div id="editarea" class="editarea"></div>
+		</div>
+		<a href="#" class="test buttonGreen" title="Ctrl+R" style="
+			width: 4.5em;  position: absolute;  bottom: 0.6em;  
+			right: 4.5em;
+		">运行代码</a>
+		<a href="#" class="submit buttonGreen help" title="Ctrl+U">提交</a>
+	</div>
+
+	<div class="pane course">
+		<!-- RIGHT HAND PANE -->
+		<!-- right pane inner contents -->
+		<div class="lesson">
+			<div class="progress">
+				<p>所有任务 &gt;&gt; 给宣传页美化-css简单入门</p>
+				<div class="steps">
+					<ul>
+						<li id="il-set-0" class="" style="display:none">
+							<a class=" " href="./e2/index.html" target="_blank">目标</a>
+						</li>
+						<li id="il-set-1" class="revisit">
+							<a class="current" title="Revisit this lesson">1</a>
+						</li>
+						<li id="il-set-2" class="revisit">
+							<a class=" " title="Resume course">2</a>
+						</li>
+						<li id="il-set-3" class="revisit">
+							<a class=" ">3</a>
+						</li>
+						<li id="il-set-4" class="revisit">
+							<a class=" ">4</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="lesson content" id="idetails-1">
+				<div class="lessonContent" data-spy="scroll" data-target="#lessonNav" data-offset="0">
+					<h1>Css是什么，怎么引入</h1>
+					<h4 id="task1-1-course">攻略</h4><hr/>
+					<p>
+						html相当于创建一个“美女”，那么css就相当于给这个美女“化妆”。<br/>
+						添加css有3种方法：
+					</p>
+					<ol>
+						<li><p>
+								给每个标签添加style属性 ←不推荐<br/>
+								<code class="code_box">
+								&lt;p style=”color:red”&gt;哈哈&lt;/p&gt;
+								</code>
+						</p></li>
+						<li>
+							<p>
+								在head标签里添加&lt;style&gt;标签 ←初学者墙裂推荐
+								<code class="code_box">
+								&lt;style&gt;</br>
+								p{</br>
+								&nbsp;&nbsp;&nbsp;&nbsp;color:red;</br>
+								}</br>
+								&lt;/style&gt;
+								</code>
+								语法是：
+								<code class="code_box">
+								目标 {</br>
+								&nbsp;&nbsp;&nbsp;&nbsp;Css样式1;</br>
+								&nbsp;&nbsp;&nbsp;&nbsp;Css样式2;</br>
+								}
+								</code>
+							</p>
+							<p>
+								目标：告诉浏览器，将要对这些目标进行“美化”。通常有3种方式：
+							</p>
+							<ol>
+								<li><p>
+									直接用标签←用于更改全部某类标签
+									<code class="code_box">
+									p {</br>
+									&nbsp;&nbsp;&nbsp;&nbsp;color:red;</br>
+									}
+									</code>
+								</p></li>
+								<li><p>
+									用标签的id属性←用于更改指定标签，方法是“#”+id名：
+									<code class="code_box">
+									#head {</br>
+									&nbsp;&nbsp;&nbsp;&nbsp;color:red;</br>
+									}
+									</code>
+								</p></li>
+								<li><p>
+									用标签的class属性←用于更改含有特定class的标签，方法是“.”+class名
+									<code class="code_box">
+									.nav  {</br>
+									&nbsp;&nbsp;&nbsp;&nbsp;color:red;</br>
+									}
+									</code>
+								</p></li>
+							</ol>
+						</li>
+						<li><p>
+							引入css文件 ←nb了一般这么做
+							<code class="code_box">
+							&lt;link rel="stylesheet" type="text/css" href="mystyle.css" /&gt;
+							</code>
+							herf属性中填入css文件地址
+						</p></li>
+					</ol>
+					<p>
+						正规教程：<br/>
+						<a href="http://www.w3school.com.cn/css/css_intro.asp" target="_blank">CSS简介</a><br/>
+						<a href="http://www.w3school.com.cn/css/css_syntax.asp" target="_blank">CSS 基础语法</a>
+					</p>
+					<br/>
+					<h4 id="task1-1-steps">步骤</h4><hr>
+					<p>
+						在head标签里添加style标签
+					</p>
+				</div>
+			</div>
+			<div class="lesson content" id="idetails-2" style="display:none">
+				<div class="lessonContent" data-spy="scroll" data-target="#lessonNav" data-offset="0">
+					<h1>文字样式</h1>
+					<h4 id="task1-1-course">攻略</h4><hr/>
+					<p>
+						只要是字都能改，常用的样式有：
+						<code class="code_box">
+						p {</br>
+						&nbsp;&nbsp;&nbsp;&nbsp;color: black;</br>
+						&nbsp;&nbsp;&nbsp;&nbsp;font-family: arial, 微软雅黑, 黑体, serif;</br>
+						&nbsp;&nbsp;&nbsp;&nbsp;font-size: 20px;</br>
+						&nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;</br>
+						}
+						</code>
+						<strong>color</strong><br/>
+						文字颜色，值可以用red、white等常见英文，或者#fff<br/>
+						<strong>font-family</strong><br/>
+						字体，中文值可以用”微软雅黑”、“宋体”、“黑体”，英文可以用arial、”Times New Roman ”(中间有空格要用引号括住字体名称)，不设的话默认使用浏览器默认字体。浏览器会按顺序使用字体，如果第一个字库里没有，就用第二个，如此类推。<br/>
+						<strong>font-size</strong><br/>
+						字号，值可以用14px、16px<br/>
+						<strong>font-weight</strong><br/>
+						加粗，值可以用bold，不设的话默认为normal<br/>
+						<br/>
+						正规教程：<br>
+						<a href="http://www.w3school.com.cn/css/css_font.asp" target="_blank">css字体</a>
+					</p>
+					<br>
+					<h4 id="task1-1-steps">步骤</h4><hr>
+					<p>
+						为随意元素添加color样式<br/>
+						为随意元素添加font-family样式<br/>
+						为随意元素添加font- size样式<br/>
+						为随意元素添加font- weight样式
+					</p>
+				</div>
+			</div>
+			<div class="lesson content" id="idetails-3" style="display:none">
+				<div class="lessonContent" data-spy="scroll" data-target="#lessonNav" data-offset="0">
+					<h1>背景</h1>
+					<h4 id="task1-1-course">攻略</h4><hr/>
+					<p>
+						通常有2个地方需要改背景，一个是按钮、面板等元素的背景，另一个是整个网页的背景<br/>
+						常用的样式有：
+						<code class="code_box">
+						p {</br>
+						&nbsp;&nbsp;&nbsp;&nbsp;background-color: blue;</br>
+						&nbsp;&nbsp;&nbsp;&nbsp;background-image: url(/i/eg_bg_02.gif);</br>
+						&nbsp;&nbsp;&nbsp;&nbsp;background-positon: 10px 10px</br>
+						}
+						</code>
+						整个网页的背景通常给body元素添加样式<br/>
+						<br/>
+						正规教程：<a href="http://www.w3school.com.cn/css/css_background.asp" target="_blank">css背景</a>
+					</p>
+					<br/>
+					<h4 id="task1-1-steps">步骤</h4><hr>
+					<p>
+						给任意元素添加背景色样式<br/>
+						给任意元素添加背景图片样式
+					</p>
+				</div>
+			</div>
+			<div class="lesson content" id="idetails-4" style="display:none">
+				<div class="lessonContent" data-spy="scroll" data-target="#lessonNav" data-offset="0">
+					<h1>边框</h1>
+					<h4 id="task1-1-course">攻略</h4><hr/>
+					<p>
+						你还可以给某些元素(如段落、标题)添加边框，像这样：
+						<code class="code_box">
+							p {<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid gray;<br/>
+							}
+						</code>
+						其中border样式的格式为：<br/>
+						<code class="code_box">
+						border: 宽度 样式 颜色;
+						</code>
+						正规教程：<br>
+						<a href="http://w3school.com.cn/css/css_border.asp" target="_blank">css边框</a>
+					</p>
+					<br/>
+					<h4 id="task1-1-steps">步骤</h4><hr>
+					<p>
+						为随意元素添加边框
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- end .lesson -->
+	</div>
+</div>
+<!-- Badge Status Modal - To Be Hidden -->
+<div id="projectCompleted" class="profile">
+	<div class="description">
+		<h2>Well done. You did great!</h2>
+		<p>
+			You achieved Javascript For Beginners badge!
+		</p>
+		
+		<img class="badge huge" width="189px" src="./index_files/icon_javascript_basic.png">
+		<div class="sharing">
+			<p class="sharing_text">
+				Share this achievement
+			</p>
+			<div class="iconSN">
+				<a href="javascript:void(0);" onclick="FBShare(&quot;complete&quot;, &quot;COURSE&quot;); return false;" class="fbIcon"></a>
+			</div>
+			<div class="iconSN" id="tweet">
+				<a href="javascript:void(0)" onclick="popUp('tweeter', 'complete', 'COURSE'); return false;" class="twitterIcon" data-count="none" title="Share on Twitter"></a>
+			</div>
+			<div class="iconSN">
+				<a href="./index_files/index.html" onclick="popUp('tumbler', 'complete', 'COURSE');" class="tumblrIcon" title="Share on Tumblr"></a>
+			</div>
+			<div class="iconSN">
+				<a href="javascript:void(0)" onclick="popUp('pinterest', 'complete', 'COURSE'); return false;" count-layout="none" id="PinItButton" class="pinitIcon"></a>
+			</div>
+		</div>
+		<p>
+			Now that you have completed this course, try doing this project
+		</p>
+		<div class="project_thumb_box">
+			
+			<img src="./index_files/snakes_project.jpg" class="project_thumb">
+			<div class="project_title">
+				Snakes &amp; Ladders
+			</div>
+			<div class="project_summary">
+				Feeling nostalgic about your childhood? Come build and play a good ol’ game of Snakes and Ladders (aka Chutes and Ladders) and...
+			</div>
+			<div class="button_container">
+				<a href="http://www.learnstreet.com/cg/simple/project/snakes" class="buttonBlue buttonSmall">Slide In!</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+var task_seq = 2;
+</script>
+<script src="./index_files/jquery.min.js"></script>
+<script src="./index_files/tab.js"></script>
+<script src="./index_files/bootstrap-scrollspy.js"></script>
+<script src="../src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="./index_files/editor.js"></script>
+<script src="./index_files/validation.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#idetails-1').scrollspy();
+	<!-- $("#idetails-1").scroll(function(){
+		$("#tab_nav").css("top",Math.max(100,130-$(this).scrollTop()));
+	}); -->
+})	
+</script>
+</body>
+</html>

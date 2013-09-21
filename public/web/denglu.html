@@ -1,0 +1,130 @@
+<link href="http://static.denglu.cc/style/style.css" rel="stylesheet" type="text/css" />
+<link href="http://static.denglu.cc/style/user_style.css" rel="stylesheet" type="text/css" />
+<link href="http://static.denglu.cc/style/new_open.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://static.denglu.cc/script/lib/jquery.js"></script>
+<script type="text/javascript" src="http://static.denglu.cc/script/widget.js"></script>
+<script type="text/javascript">
+var _domain = 'moshifang.com';
+$(document).ready(function(){
+	  var currentPosition = 0;
+	  var slideWidth = 404;
+	  var slides = $('#slideInner').find("ul");
+	  var numberOfSlides = slides.length;
+
+	  // Remove scrollbar in JS
+	  $('#slidesContainer').css('overflow', 'hidden');
+
+	  // Wrap all .slides with #slideInner div
+	  slides
+	    .wrapAll('<div id="slideInner"></div>')
+	    // Float left to display horizontally, readjust .slides width
+		.css({
+	      'float' : 'left',
+	      'width' : slideWidth
+	    });
+
+	  // Set #slideInner width equal to total width of all slides
+	  $('#slideInner').css('width', slideWidth * numberOfSlides);
+
+	  // Insert controls in the DOM
+	  $('#slideshow')
+	    .prepend('<a class="team_left2" id="leftControl" href="javascript:;"></a><a class="team_left1" id="leftNoLink" style="display:none"></a>')
+	    .append('<a class="team_right2" id="rightControl" href="javascript:;"></a><a class="team_right1" id="rightNoLink" style="display:none"></a>');
+
+	  // Hide left arrow control on first load
+	  manageControls(currentPosition);
+
+	  // 少于等于8个隐藏下一页的按钮
+	  if (numberOfSlides == 1) {
+		  $("#leftNoLink").css("visibility", "hidden");
+		  $("#rightNoLink").css("visibility", "hidden");
+	  }
+
+	  // Create event listeners for .controls clicks
+	  $('#leftControl, #rightControl')
+	    .bind('click', function(){
+	    // Determine new position
+		currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+
+		// Hide / show controls
+	    manageControls(currentPosition);
+	    // Move slideInner using margin-left
+	    $('#slideInner').animate({
+	      'marginLeft' : slideWidth*(-currentPosition)
+	    });
+	  });
+
+	  // manageControls: Hides and Shows controls depending on currentPosition
+	  function manageControls(position){
+	    // Hide left arrow if position is first slide
+		if(position==0){
+			$('#leftControl').hide();
+			$('#leftNoLink').show();
+		} else{
+			$('#leftNoLink').hide();
+			$('#leftControl').show();
+		}
+		// Hide right arrow if position is last slide
+	    if(position==numberOfSlides-1){
+			$('#rightControl').hide();
+			$('#rightNoLink').show();
+		} else{
+			$('#rightNoLink').hide();
+			$('#rightControl').show();
+		}
+	  }
+	  	var sidepx = 0;
+	  	switch(1) {
+	  	case 1:
+	  	case "1":
+	  		sidepx = 2;
+		  	break;
+	  	case 2:
+	  	case "2":
+	  		sidepx = 2;
+		  	break;
+	  	case 3:
+	  	case "3":
+	  		sidepx = 3;
+		  	break;
+	  	case 4:
+	  	case "4":
+	  		sidepx = 5;
+	  	case 5:
+	  	case "5":
+	  		sidepx = 3;
+		  	break;
+	  	}
+		var toppx = (49 - 19 - sidepx) / 2;
+		$('#rightControl').css("top", toppx + "px");
+		$('#rightNoLink').css("top", toppx + "px");
+		$('#leftControl').css("top", toppx + "px");
+		$('#leftNoLink').css("top", toppx + "px");
+});
+</script>
+
+<!-- 大按钮-->
+<div class="team_list" style="width: 412px;height:83px;" id="nMediaLogin" >
+	<h2>合作网站账号登录</h2>
+	<div id="slideshow" class="team_con">
+	    <div style="width: 404px;height:49px;" id="slidesContainer" class="teamcon">
+		<div id="slideInner">
+		<div id="mediashow" class="denglu_con">
+	    	<ul>
+	        	<li><a target="_blank" rel="nofollow" href="http://open.denglu.cc/transfer/sina?appid=50460&redirect_uri=http%3A%2F%2Fmoshifang.com%2F" title='用新浪微博账号登录' class="denglu_icon1 denglu_icon1_sina_second"></a></li>
+	        	<li><a target="_blank" rel="nofollow" href="http://open.denglu.cc/transfer/qzone?appid=50460&redirect_uri=http%3A%2F%2Fmoshifang.com%2F" title='用QQ账号登录' class="denglu_icon1 denglu_icon1_qzone"></a></li>
+	        	<li><a target="_blank" rel="nofollow" href="http://open.denglu.cc/transfer/renren?appid=50460&redirect_uri=http%3A%2F%2Fmoshifang.com%2F" title='用人人网账号登录' class="denglu_icon1 denglu_icon1_renren"></a></li>
+	    	</ul>
+		</div>
+		</div>
+		</div>
+	</div>
+</div>
+
+<!--其实登陆只要有这三个链接就够了！-->
+<div style="display:none">
+	<a target="_blank" href="http://open.denglu.cc/transfer/sina?appid=50460&redirect_uri=http%3A%2F%2Fmoshifang.com%2F">sina_denglu</a>
+	<a target="_blank" href="http://open.denglu.cc/transfer/renren?appid=50460&redirect_uri=http%3A%2F%2Fmoshifang.com%2F">renren_denglu</a>
+	<a target="_blank" href="http://open.denglu.cc/transfer/qzone?appid=50460&redirect_uri=http%3A%2F%2Fmoshifang.com%2F">qq_denglu</a>
+</div>

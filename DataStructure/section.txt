@@ -1,0 +1,23 @@
+//仅供参考！！！！
+{
+	"no":1,
+	"info":{},
+	taskArray:[
+		{
+			"no":"1",
+			"info":{
+				"target":"/balabala.html",
+				"requiredEnergy":20,
+				"gain":20,
+				"title":"Javascript",
+				"description":"It's Easy!",
+				"taskImg":"/stage1.jpg"
+				}
+			"result":{
+				"status":"unaccepted"/"accepted"/"done"/"locked"
+				"grade":15,
+				"code":"<html><html>"
+			}
+		}
+	]
+}
