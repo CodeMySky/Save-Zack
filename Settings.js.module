@@ -1,0 +1,9 @@
+module.exports = {
+	cookieSecret: 'It is a secret',
+	db: 'db_name',
+	host: 'host_domain',
+	appid: "app_id",
+	api_key: "api_key",
+	client_id: "client_id",
+	client_secret: "client_secret"
+};

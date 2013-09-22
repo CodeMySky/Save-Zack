@@ -14,3 +14,7 @@ results
 npm-debug.log
 .svn
 node_modules
+Settings.js
+AppKey,AppSecret.txt
+cluster.js
+access.log error.log
