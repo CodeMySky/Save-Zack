@@ -1,0 +1,15 @@
+﻿<!DOCTYPE>
+<html>
+	<head>
+		<title>欢迎来到facebook宣传页~</title>
+		<link href="styles.css" rel="stylesheet">
+	</head>
+	<body>
+		<img src="ad.jpg" />
+		<h1 id="head">欢迎来到我的帝国</h1>
+		<p>时间允许我们穿越回十年前——2003年9月，哈佛校园。一名叫小扎的同学，正在策划一个将来要伟大的网站facebook。</p>
+		<p>拥有一个伟大的梦想是不错，可是由于你的穿越，撞到了小扎的头，他…失忆了，变成一个对网页编程战斗力只有5的渣渣。</p>
+		<p>肿么办？为了对原始世界不产生影响，只能靠你来重塑一个facebook了。</p>
+		<a class="link" href="http://www.moshifang.com">时间紧急，我们开始吧！</a>
+	</body>
+</html>

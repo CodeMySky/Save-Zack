@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>拯救导航栏</title>
+	<style>
+		#nav{
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			width: 100%;
+			height: 40px;
+			background-color: black;
+			color: white;
+			text-align: center;
+			font-family: 微软雅黑;
+		}
+		#nav-wrap{
+			width: 960px;
+			margin: 0 auto;
+		}
+		#logo{
+			float: left;
+			background-image: url(http://moshifang.com/images/logo.png);
+			width: 64px;
+			height: 34px;
+			margin: 3px 20px;
+		}
+		#nav-left{
+			float: left;
+		}
+		.left{
+			line-height: 20px;
+			font-size: 16px;
+			color: gray;
+			padding: 10px 15px;
+			display: block;
+			text-decoration: none;
+			float: left;
+		}
+		#search{
+			float: right;
+		}
+		#search-input{
+			font-size: 16px;
+			margin: 5px 0;
+			padding: 4px 10px;
+			height: 20px;
+			background-color: #515151;
+			border: 1px solid black;
+			border-radius: 15px;
+		}
+		.active{
+			background-color: white;
+			color: black;
+		}
+	</style>
+</head>
+<body style="http://moshifang.com/web/targets/e8/parttern1.png;">
+	<div id="nav">
+		<div id="nav-wrap">
+			<div id="logo"></div>
+			<div id="nav-left">
+				<a class="left" href="index.html">小扎的介绍</a>
+				<a class="left" href="album.html">小扎的相册</a>
+				<a class="left active" href="about.html">关于我</a>
+			</div>
+			<div id="search">
+				<input id="search-input" type="text" placeholder="搜索"> 
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		<!-- 这里放网站内容 -->
+	</div>
+</body>
+</html>
